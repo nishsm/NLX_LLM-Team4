@@ -1,0 +1,25 @@
+{
+  "_help": "Your group fills this in. Nothing here is fixed: rename the fields, add or remove them, and leave 'values' empty for an open field the model may answer freely. extraction.py builds the schema, the prompts and the human-label template from this file.",
+
+  "group_topic": "legal case research",
+  "subtopic": "AI-assisted immigration & refugee law case research (Australian Federal Court opinions, precedent identification and citation treatment)",
+
+  "fields": {
+    "visa_category": {
+      "kind": "label",
+      "values": [],
+      "description": "the type of immigration/visa matter the case concerns (e.g. protection/refugee visa, partner/family visa, skilled/business visa, student visa, visa cancellation, citizenship)"
+    },
+    "citation_treatment": {
+      "kind": "label",
+      "values": ["cited", "referred to", "applied", "followed", "considered", "discussed", "distinguished", "quoted", "related", "affirmed", "approved"],
+      "description": "how this case treats the precedent(s) it cites, matching the class values used by the source dataset"
+    },
+    "cited_cases": {
+      "kind": "list",
+      "description": "case names/citations referenced in the opinion, copied exactly as written"
+    }
+  },
+
+  "prompts": {}
+}
