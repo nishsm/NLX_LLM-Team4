@@ -1,0 +1,27 @@
+{
+  "_help": "Your group fills this in. Nothing here is fixed: rename the fields, add or remove them, and leave 'values' empty for an open field the model may answer freely. extraction.py builds the schema, the prompts and the human-label template from this file.",
+
+  "group_topic": "legal case research",
+  "subtopic": "AI-assisted immigration & refugee law case research (Australian Federal Court opinions, precedent identification and citation treatment)",
+
+  "fields": {
+    "visa_category": {
+      "kind": "label",
+      "values": [],
+      "description": "the type of immigration/visa matter the case concerns (e.g. protection/refugee visa, partner/family visa, skilled/business visa, student visa, visa cancellation, citizenship)"
+    },
+    "citation_treatment": {
+      "kind": "label",
+      "values": ["cited", "referred to", "applied", "followed", "considered", "discussed", "distinguished", "quoted", "related", "affirmed", "approved"],
+      "description": "how this case treats the precedent(s) it cites, matching the class values used by the source dataset"
+    },
+    "cited_cases": {
+      "kind": "list",
+      "description": "case names/citations referenced in the opinion, copied exactly as written"
+    }
+  },
+
+  "prompts": {
+    "v2_recovery": "You label documents from a corpus about AI-assisted immigration & refugee law case research (Australian Federal Court opinions, precedent identification and citation treatment). Fill in every field, following these rules exactly:\n- visa_category: the type of immigration/visa matter the case concerns (e.g. protection/refugee visa, partner/family visa, skilled/business visa, student visa, visa cancellation, citizenship) -- a short value taken from the document.\n- citation_treatment: how this case treats the precedent(s) it cites, matching the class values used by the source dataset -- MUST be exactly one of: cited, referred to, applied, followed, considered, discussed, distinguished, quoted, related, affirmed, approved. Never invent a value outside that list.\n- cited_cases: case names/citations referenced in the opinion, copied exactly as written -- a list of strings. Copy each one exactly as it appears in the document, and return an empty list if there are none.\n\nUse only what the document says. Do not explain your answer.\n\nCRITICAL OUTPUT FORMAT: you were shown a JSON SCHEMA (an object with \"type\", \"properties\", \"required\" keys) that describes the SHAPE of a valid answer. That schema is a template for you to read, not a template for you to copy. Your response must be the DATA itself: a flat JSON object with exactly the three keys visa_category, citation_treatment, cited_cases at the top level, and nothing else -- no \"type\" key, no \"properties\" key, no \"required\" key, no nesting, no markdown code fence. For example, a correct response looks exactly like this:\n{\"visa_category\": \"protection/refugee visa\", \"citation_treatment\": \"followed\", \"cited_cases\": [\"Example v Minister for Immigration [2005] FCA 1\"]}\nDo not repeat the schema back to me. Return only the data, in that flat shape, with no other text before or after it."
+  }
+}
