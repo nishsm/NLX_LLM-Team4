@@ -1,0 +1,32 @@
+{
+  "_help": "Extraction task for the Intellectual Property subtopic. extraction.py builds the JSON schema, both prompts and the human-label template from this file.",
+
+  "group_topic": "ai_assisted_legal_case_research",
+  "subtopic": "intellectual property law (Federal Court of Australia, 2006-2009)",
+
+  "fields": {
+    "ip_area": {
+      "kind": "label",
+      "values": ["patent", "trade_mark", "copyright", "registered_design", "passing_off", "not_stated"],
+      "description": "the branch of intellectual property law this document concerns"
+    },
+    "outcome": {
+      "kind": "label",
+      "values": ["granted", "refused", "dismissed", "allowed", "not_stated"],
+      "description": "the result recorded in this document; use not_stated if the document does not say"
+    },
+    "cited_cases": {
+      "kind": "list",
+      "description": "names of earlier court cases cited in this document, copied exactly as written"
+    },
+    "legislation_cited": {
+      "kind": "list",
+      "required": false,
+      "description": "names of Acts or statutory provisions named in this document, copied exactly as written"
+    }
+  },
+
+  "prompts": {
+    "v3_actonly": "You label documents from a corpus about intellectual property law (Federal Court of Australia). Fill in every field:\n- ip_area: the branch of intellectual property law this document concerns -- one of patent, trade_mark, copyright, registered_design, passing_off, not_stated.\n- outcome: the result recorded in this document -- one of granted, refused, dismissed, allowed, not_stated.\n- cited_cases: names of earlier court cases cited in this document, copied exactly as written -- a list of strings.\n- legislation_cited: names of Acts named in this document -- a list of strings. Give the full name of the Act as the document writes it, including the year and any jurisdiction suffix such as (Cth). Do not include section numbers: write \"Trade Marks Act 1995 (Cth)\", not \"s 41 of the Trade Marks Act 1995\". List each Act once."
+  }
+}
