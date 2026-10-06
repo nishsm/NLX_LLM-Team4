@@ -5,3 +5,8 @@ out/
 .DS_Store
 *.zip
 label_source.json
+
+# local duplicates / unzip leftovers
+nishanth/assignment1*/
+nishanth/zilMGtOd
+nishanth/ziyb53w9

@@ -1,2 +1,0 @@
-source_url,source_name,retrieved_at,license_note,record_count
-http://www.austlii.edu.au/,"AustLII / Federal Court of Australia, via UCI ML Repository 'Legal Case Reports' dataset",2026-09-22T16:13:03.595751+00:00,"UCI Machine Learning Repository, 'Legal Case Reports' dataset (Galgani, Compton & Hoffmann; cases sourced from AustLII, the Federal Court of Australia's public opinions). Per the dataset's own README: for research/course use only, do not redistribute; cite Galgani & Hoffmann (AI 2010) or Galgani, Compton & Hoffmann (COLING/ACL 2012) if published.",220
