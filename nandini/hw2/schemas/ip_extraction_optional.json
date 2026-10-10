@@ -1,0 +1,71 @@
+{
+  "$defs": {
+    "CaseCitation": {
+      "properties": {
+        "case_name": {
+          "title": "Case Name",
+          "type": "string"
+        },
+        "citation": {
+          "title": "Citation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "case_name",
+        "citation"
+      ],
+      "title": "CaseCitation",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "primary_ip_area": {
+      "enum": [
+        "copyright",
+        "patent",
+        "trade_mark",
+        "passing_off",
+        "registered_design"
+      ],
+      "title": "Primary Ip Area",
+      "type": "string"
+    },
+    "secondary_ip_areas": {
+      "default": [],
+      "items": {
+        "enum": [
+          "copyright",
+          "patent",
+          "trade_mark",
+          "passing_off",
+          "registered_design"
+        ],
+        "type": "string"
+      },
+      "title": "Secondary Ip Areas",
+      "type": "array"
+    },
+    "cases_cited": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/CaseCitation"
+      },
+      "title": "Cases Cited",
+      "type": "array"
+    },
+    "legislation_cited": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Legislation Cited",
+      "type": "array"
+    }
+  },
+  "required": [
+    "primary_ip_area"
+  ],
+  "title": "ExtractionOptional",
+  "type": "object"
+}
