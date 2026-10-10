@@ -2,9 +2,7 @@
 
 **Tools used:** Claude (Anthropic).
 
-**What AI was used for:** preparing the repository for submission. This meant rebuilding the
-dev/eval split files from the `doc_id`s already recorded in the result files, converting the
-Part D probe set to JSONL, packaging the code ZIP, and drafting the README files. No model
+**What AI was used for:** preparing the repository for submission.No model
 runs were repeated, and no results were changed.
 
 **What I did myself:** built the corpus, designed the extraction task, hand-labelled the 25
