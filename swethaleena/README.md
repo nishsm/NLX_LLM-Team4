@@ -1,4 +1,4 @@
-# swethaleena — IP-A: Intellectual Property Case Law
+# Swetaleena — IP-A: Intellectual Property Case Law
 
 Model: Phi-4-mini-instruct. Corpus: 214 Australian Federal Court IP cases (2006–2009),
 UCI Legal Case Reports dataset (AustLII). **Research use only, do not redistribute.**
